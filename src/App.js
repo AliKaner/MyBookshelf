@@ -10,12 +10,21 @@ function App() {
         setTextInput(e.target.value);
     };
 
-    const onAddBookPress = (e) => {
+    const onAddBookPress = () => {
         const tempList = [...bookList];
         tempList.push(textInput);
         setTextInput('');
         setBookList(tempList);
     };
+
+    const onDeleteBookPress = (book) => {
+        const templistrDelete = [...bookList];
+        const deletecoook = templistrDelete.filter((item) =>item!==book );
+       setBookList(deletecoook);
+
+
+
+    }
 
     // bookList.map
 
@@ -23,37 +32,25 @@ function App() {
         <div className="App">
             <div className="Rside">
                 <div className="tableBackGround">
-                    <table className="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Nu</th>
-                            <th scope="col">Book</th>
-                            <th scope="col">Page</th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Çingene</td>
-                            <td>78</td>
-                            <button className="deleteButton">delete</button>
+                    <div className="table-row">
+                        <div className="book-header-background">
+                            <h1 className="books-header">Books</h1>
+                            <div className="seperater"></div>
+                            { bookList.map((book) =>
+                                <div className = "newBook">
+                                    <div  className="book">
+                                        {book}
+                                    </div>
+                                    <div className = "bookButton">
+                                        <button className ="delete-button"
+                                                onClick ={()=>onDeleteBookPress(book)}>Delete</button>
 
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>İlyada</td>
-                            <td>709</td>
-                            <button className="deleteButton">delete</button>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Taht Oyunları</td>
-                            <td>679</td>
-                            <button className="deleteButton">delete</button>
-                        </tr>
-                        </tbody>
-                    </table>
+                                    </div>
+                                    <div className = "bookSeperater"></div>
+                                </div>)
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="Lside">
@@ -66,7 +63,7 @@ function App() {
                        id="newItem"
                        value={textInput}
                        onChange={(e) => onInputChange(e)}/>
-                <button onClick={onAddBookPress}>Bas bana</button>
+                <button onClick={onAddBookPress}>Add</button>
             </div>
         </div>
     );

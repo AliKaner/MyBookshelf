@@ -61,7 +61,57 @@
   left: 0;
   background-color: whitesmoke;
 }
-.deleteButton {
- border: 3px red;
-  background-color: red;
+.table-cell {
+  border-width: 1px;
+  border-color: gray;
+  border-bottom: black;
+}
+.books-header {
+  margin-bottom: 1cm  ;
+  border-bottom: #282c34;
+  color: #4cd9d9;
+  width: 100%;
+  position: center;
+}
+.seperater {
+  border-bottom: 3px solid #1a5566;
+  margin-bottom: 10px;
+}
+.bookButton {
+
+  position: static;
+
+}
+.book {
+  background-size: auto;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  display:inline-block;
+  width: 30%;
+
+}
+.bookButton {
+  text-align: left;
+
+  display:inline-block;
+  margin-left:auto;
+  margin-right:auto;
+
+  width:30%;
+
+}
+.bookSeperater {
+  margin-bottom:5px;
+  margin-top: 5px;
+  border-bottom: 3px solid #bcd9e7;
+}
+.newBook {
+  position: center;
+
+
+}
+.delete-button {
+  background-color: #51a9cd;
+
 }
