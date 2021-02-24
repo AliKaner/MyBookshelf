@@ -2,32 +2,22 @@ import React, {useState} from 'react';
 import './App.css';
 
 function App() {
-    // ctrl + alt + L
     const [bookList, setBookList] = useState([]);
     const [textInput, setTextInput] = useState('');
-
     const onInputChange = (e) => {
         setTextInput(e.target.value);
     };
-
     const onAddBookPress = () => {
         const tempList = [...bookList];
         tempList.push(textInput);
         setTextInput('');
         setBookList(tempList);
     };
-
     const onDeleteBookPress = (book) => {
         const templistrDelete = [...bookList];
         const deletecoook = templistrDelete.filter((item) =>item!==book );
        setBookList(deletecoook);
-
-
-
     }
-
-    // bookList.map
-
     return (
         <div className="App">
             <div className="Rside">
@@ -44,7 +34,6 @@ function App() {
                                     <div className = "bookButton">
                                         <button className ="delete-button"
                                                 onClick ={()=>onDeleteBookPress(book)}>Delete</button>
-
                                     </div>
                                     <div className = "bookSeperater"></div>
                                 </div>)
